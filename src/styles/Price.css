@@ -1,0 +1,132 @@
+.products {
+  width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: flex-start; /* jika ingin di tengah vertical: center */
+}
+
+.productTitle {
+  font-family: "Outfit", sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.productList {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+  
+  /* MENU ITEM STYLING */
+  
+  .productItem {
+    border-radius: 15px;
+    width: 300px;
+    height: 500px;
+    margin: 20px;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    background-color: var(--color-main);
+    align-items: center;
+  }
+  .productItem:hover {
+    box-shadow: 0px 3px 15px var(--color-third);
+    transition: 0.3s ease-in;
+    cursor: pointer;
+  }
+  
+  .productItem div {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    width: 100%;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+ /* Ini untuk wrapper konten teks */
+.productItem .textContent {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 0 40px;
+    text-align: center;
+  }
+  
+  .productItem h1 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: var(--color-secondary);
+    font-weight: 500;
+  }
+  
+  .productItem p {
+    margin: 35px 0;
+    font-size: 16px;
+    color: var(--color-secondary);
+    font-weight: 200;
+  }
+  
+  .productItem h3 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+  }
+
+  /* STYLE BUTTON CONTAINER */
+  .buttonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 30px 40px;
+    padding-right: 50px;
+  }
+
+  .buttonContainer a {
+    text-decoration: none;
+  }
+
+  .waButton {
+    padding: 10px 30px;
+    background-color: #1ebe5d;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  .waButton:hover {
+    background-color: #1ebe5d;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media only screen and (max-width: 1300px) {
+    .productList {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .productList {
+      grid-template-columns: 1fr;
+    }
+  }

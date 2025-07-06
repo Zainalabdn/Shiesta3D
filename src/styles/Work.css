@@ -1,0 +1,46 @@
+.work {
+    width: 100%;
+    padding: 40px 60px;
+    box-sizing: border-box;
+  }
+  
+  .workTop {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .workTop h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-weight: 400;
+  }
+  
+  .workTop p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    font-weight: 300;
+  }
+  
+  .workBottom {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .workImage {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .workImage:hover {
+    transform: scale(1.05);
+  }
+  

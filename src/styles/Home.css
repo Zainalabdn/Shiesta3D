@@ -1,0 +1,515 @@
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-in, transform 0.8s ease-in;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* Vertikal tengah */
+  justify-content: flex-start;
+  /* Horizontal kiri */
+  padding-left: 140px;
+  /* Jarak dari kiri */
+  color: var(--color-main);
+}
+
+.backgroundImage {
+  position: absolute;
+  /* Membuatnya berada di belakang */
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Gambar memenuhi lebar */
+  height: 100%;
+  /* Gambar memenuhi tinggi */
+  object-fit: cover;
+  /* Skala gambar sesuai container */
+  z-index: 0;
+  /* Pastikan di bawah teks */
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.headerContainer {
+  z-index: 1;
+  max-width: 500px;
+  /* opsional, biar teks ga terlalu panjang */
+}
+
+.headerContainer h1 {
+  font-size: 60px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.headerContainer p {
+  font-size: 20px;
+  font-weight: 350;
+  margin-bottom: 40px;
+}
+
+.headerContainer button {
+  margin-top: 20px;
+  padding: 10px 30px;
+  font-size: 16px;
+  background-color: #1ebe5d;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  /* Biar ikon dan teks sejajar */
+  align-items: center;
+  /* Vertikal tengah */
+  justify-content: center;
+  /* Horizontal tengah */
+  gap: 10px;
+  /* Jarak antara ikon dan teks */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.headerContainer button:hover {
+  background-color: #16a34a;
+  /* warna hijau lebih gelap saat hover */
+  transform: scale(1.05);
+  /* sedikit membesar saat hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.headerContainer a {
+  text-decoration: none;
+}
+
+/* Highlight Section */
+.highlightSection {
+  display: flex;
+  gap: 40px;
+  padding: 60px 20px;
+  background-color: #ffffff;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Wrapper untuk membatasi lebar maksimal */
+.highlightListWrapper {
+  max-width: 1200px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.highlightList {
+  display: flex;
+  gap: 40px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.highlightList::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+.highlightCard {
+  background-color: #f9f6ff;
+  padding: 30px;
+  border-radius: 16px;
+  width: 300px;
+  flex: 0 0 auto;
+  height: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  scroll-snap-align: start;
+}
+
+.highlightCard h3 {
+  font-weight: 600;
+  color: var(--color-main);
+  padding-bottom: 20px;
+}
+
+.highlightCard p {
+  font-weight: 300;
+  color: var(--color-main);
+  font-size: 16px;
+}
+
+.highlightCard:hover {
+  transform: translateY(-5px);
+}
+
+.highlightIcon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.infoSection {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 60px;
+  background-color: #fff;
+  gap: 60px;
+}
+
+
+/* Gambar + teks Kenapa Kami */
+.whyUs {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* Geser ke kiri */
+  gap: 40px;
+  flex-wrap: wrap;
+  margin: 0 auto 60px auto;
+  max-width: 1200px;
+  padding: 0 40px;
+}
+
+.infoImageLeft {
+  width: 90%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.whyUsText {
+  flex: 1;
+  min-width: 280px;
+  padding-left: 80px;
+}
+
+.whyUsText h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: var(--color-main);
+}
+
+.whyUsText p {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--color-main);
+}
+
+/* Bahan - dua kolom */
+.materialBox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin: 0 auto 60px auto;
+  max-width: 1200px;
+  padding: 0 40px;
+  flex-direction: row; /* default: gambar di kanan */
+}
+
+.materialText {
+  flex: 1;
+  min-width: 280px;
+}
+
+.materialText h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-main);
+  margin-bottom: 20px;
+}
+
+.materialText p {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--color-main);
+}
+
+.materialImage {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Testimoni Section */
+.testimoniSection {
+  padding: 60px 20px;
+  background-color: #f5f3fd;
+  text-align: center;
+}
+
+.testimoniSection h2 {
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--color-main);
+  margin-bottom: 30px;
+}
+
+
+.testimoniContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.testimoniList {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+  width: 100%;
+}
+.testimoniList::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+.testimoniCard {
+  flex: 0 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+  scroll-snap-align: start;
+  border-radius: 12px;
+  width: 280px;
+  min-width: 280px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  color: var(--color-main);
+  transition: transform 0.3s ease;
+  text-align: center;
+  
+}
+
+.testimoniAvatar {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  /* Membuat bundar */
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  /* Tambahkan efek bayangan */
+  border: 2px solid #eee;
+  /* Opsional: buat border lembut */
+}
+
+.testimoniCard:hover {
+  transform: translateY(-5px);
+}
+
+.testimoniCard span {
+  display: block;
+  margin-top: 10px;
+  font-style: italic;
+  color: #777;
+}
+
+.testimoniCard p {
+  font-weight: 350;
+  font-size: 15px;
+}
+
+.testimoniList::-webkit-scrollbar {
+  height: 8px;
+}
+
+.testimoniList::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+
+/* Responsiveness */
+@media (min-width: 1025px) {
+  .highlightList {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: visible;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .materialBox {
+    flex-direction: column-reverse;
+  }
+
+  .highlightList {
+    padding-bottom: 10px;
+  }
+
+  .headerContainer {
+    max-width: 80%;
+    /* Lebih lebar untuk layar lebih kecil */
+  }
+
+  .highlightCard {
+    min-width: 260px;
+    max-width: 300px;
+  }
+
+  .testimoniCard p {
+    font-size: 14px;
+  }
+
+  .testimoniCard {
+    width: 200px;
+    height: 230px;
+  }
+
+  .testimoniCard span {
+    font-size: 12px;
+  }
+
+  .testimoniList {
+      justify-content: flex-start;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 20px;
+      -webkit-overflow-scrolling: touch;
+      flex-wrap: nowrap;
+  }
+  .testimoniList::-webkit-scrollbar {
+      height: 8px;
+  }
+  .testimoniList::-webkit-scrollbar-thumb {
+      background-color: rgba(74, 58, 255, 0.3);
+      border-radius: 4px;
+  }
+  .testimoniCard {
+      scroll-snap-align: center;
+  }
+}
+
+
+@media (max-width: 1040px) {
+  .home {
+    background-size: contain;
+    /* Mengurangi ukuran gambar */
+    background-repeat: no-repeat;
+    background-position: left;
+    background: none;
+    /* Menghilangkan gambar latar */
+    background-color: #f4f4f4;
+  }
+
+  .backgroundImage {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 768px) {
+
+ .materialImage {
+    max-width: 100%;
+  }
+
+  .highlightList {
+    padding: 0 10px; /* Adjust padding for mobile */
+    gap: 20px; /* Reduce gap between cards */
+  }
+  .highlightCard {
+      width: 80%; /* Make cards take up more width */
+      min-width: 250px; /* Set a minimum width */
+      height: auto; /* Allow height to adjust based on content */
+  }
+
+  .materialText {
+    max-width: 90%;
+    text-align: center;
+    padding: 0;
+  }
+
+  .materialImage {
+    max-width: 90%;
+  }
+
+  .whyUs {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .whyUsText {
+    text-align: center;
+    padding: 0;
+  }
+
+  .infoImageLeft {
+    max-width: 100%;
+  }
+
+  /* Highlight */
+  .highlightSection {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .highlightCard {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    background: none;
+    /* Hilangkan gambar latar */
+    background-color: #f4f4f4;
+    /* Tambahkan warna latar untuk kontras */
+    color: #333;
+    /* Sesuaikan warna teks agar terlihat jelas */
+    justify-content: center;
+    /* Posisikan teks di tengah */
+    padding-left: 0;
+    /* Hapus padding */
+  }
+
+  .backgroundImage {
+    opacity: 0.5;
+  }
+
+  .headerContainer h1 {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+
+  .headerContainer p {
+    font-size: clamp(12px, 4vw, 16px);
+  }
+
+  .headerContainer button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
