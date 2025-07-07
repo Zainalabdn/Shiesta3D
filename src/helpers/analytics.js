@@ -1,15 +1,13 @@
-import ReactGA from "react-ga4";
-
-const GA_MEASUREMENT_ID = "G-4P4QFQWDW7"; // Ganti dengan ID kamu
-
+// src/helpers/analytics.js
 export const initGA = () => {
-  ReactGA.initialize(GA_MEASUREMENT_ID);
+  if (!window.gtag) return;
+  window.gtag('js', new Date());
+  window.gtag('config', 'G-3XJCTSMFJD'); // ganti dengan ID milikmu
 };
 
-export const trackPageView = (path) => {
-  ReactGA.send({
-    hitType: "pageview",
-    page: path,
-    title: document.title // ini bantu biar judul halaman juga dikirim
+export const trackPageView = (url) => {
+  if (!window.gtag) return;
+  window.gtag('config', 'G-3XJCTSMFJD', {
+    page_path: url,
   });
 };
